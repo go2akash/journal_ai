@@ -1,9 +1,9 @@
-from db.base import engine , Base
-from db.models.users import Users
+from app.db.base import engine , Base
+from app.db.models.users import Users
 import asyncio
-from db.models.block import Block
-from db.models.journal_page import JournalPage
-from db.models.users import Users
+from app.db.models.block import Block
+from app.db.models.journal_page import JournalPage
+from app.db.models.users import Users
 
 __all__ = ["Block", "Users", "JournalPage"]
 
