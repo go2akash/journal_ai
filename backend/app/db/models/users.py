@@ -15,6 +15,6 @@ class Users(Base):
     name:Mapped[str] = mapped_column(String(100))
     email:Mapped[str] = mapped_column(String(100), unique=True, nullable=False)
     password:Mapped[str] = mapped_column(String, nullable=False)
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=func.now())
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, server_default=func.now())
 
 
