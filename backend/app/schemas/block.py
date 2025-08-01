@@ -1,7 +1,9 @@
-from pydantic import BaseModel, Field
+from datetime import datetime
 from typing import Optional
 from uuid import UUID
-from datetime import datetime
+
+from pydantic import BaseModel
+
 
 class BlockCreate(BaseModel):
     page_id: UUID
@@ -10,6 +12,7 @@ class BlockCreate(BaseModel):
     type: str
     content: dict
     position: Optional[int] = 0
+
 
 class BlockRead(BaseModel):
     id: UUID

@@ -3,9 +3,26 @@ __pycache__/
 *.py[oc]
 build/
 dist/
+*.pyo
 wheels/
 *.egg-info
 
-# Virtual environments
-.venv
-.env
+
+
+# Virtual environment
+.venv/
+env/
+
+# Tool caches
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.tox/
+
+# Editors
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+Thumbs.db
