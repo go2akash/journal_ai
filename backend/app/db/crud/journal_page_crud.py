@@ -1,15 +1,17 @@
-from sqlalchemy.ext.asyncio import AsyncSession
-from app.db.models.journal_page import JournalPage
-from app.schemas.journal_page import JournalCreate
 from uuid import uuid4
 
+from sqlalchemy.ext.asyncio import AsyncSession
 
-async def CreateJournalPage(db:AsyncSession,data:JournalCreate):
-    journalpage=JournalPage(
+from app.db.models.journal_page import JournalPage
+from app.schemas.journal_page import JournalCreate
+
+
+async def create_journal_page(db: AsyncSession, data: JournalCreate):
+    journalpage = JournalPage(
         id=uuid4(),
         title=data.title,
-        userid=data.userid,
-        journal_date=data.journal_date,        
+        userid=data.user_id,
+        journal_date=data.journal_date,
     )
 
     db.add(journalpage)

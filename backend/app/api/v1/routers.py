@@ -1,11 +1,10 @@
 from fastapi import APIRouter
-from .user_router import router as user_router
-from .journal_router import router as journal_router
+
 from .block_routes import router as block_router
+from .journal_router import router as journal_router
+from .user_router import router as user_router
 
-
-
-router=APIRouter()
+router = APIRouter()
 
 
 router.include_router(user_router, prefix="/users", tags=["Users"])
