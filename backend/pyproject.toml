@@ -24,10 +24,9 @@ dev = [
 line-length = 88
 
 [tool.ruff]
-select = ["E", "F", "N"]
 line-length = 88
 target-version = "py311"
 exclude = ["tests", "migrations", "__pycache__"]
 
-[tool.isort]
-profile = "black"
+[tool.ruff.lint]
+select = ["E", "F", "N"]
