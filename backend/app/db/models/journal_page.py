@@ -16,7 +16,7 @@ class JournalPage(Base):
     __tablename__ = "journal_pages"
 
     id: Mapped[uuid.UUID] = mapped_column(primary_key=True, default=uuid4)
-    userid: Mapped[uuid.UUID] = mapped_column(ForeignKey("users.id"), nullable=False)
+    user_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("users.id"), nullable=False)
     title: Mapped[str] = mapped_column(String(100))
     created_at: Mapped[datetime] = mapped_column(
         DateTime, default=datetime.utcnow, server_default=func.now()

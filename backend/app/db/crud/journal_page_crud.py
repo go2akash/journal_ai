@@ -10,7 +10,7 @@ async def create_journal_page(db: AsyncSession, data: JournalCreate):
     journalpage = JournalPage(
         id=uuid4(),
         title=data.title,
-        userid=data.user_id,
+        user_id=data.user_id,
         journal_date=data.journal_date,
     )
 
